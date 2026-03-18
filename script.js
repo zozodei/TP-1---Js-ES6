@@ -124,4 +124,110 @@ console.log ( calcularPrecioTotal(productos));
 
 //PARTE 4
 
-//Ejerc
+//Ejercicio 11 - Map
+
+const usuarios = [
+
+{nombre:"Ana", edad:17},
+
+{nombre:"Juan", edad:25},
+
+{nombre:"Pedro", edad:30}
+
+]
+
+const nombres = usuarios.map(usuario => usuario.nombre);
+
+console.log (nombres);
+
+//Ejercicio 12 - Filter
+
+const edadesMayor18 = usuarios.filter(e => e.edad > 18);
+console.log(edadesMayor18);
+
+//Ejercicio 13 - Reduce
+
+const sumaEdades = usuarios.reduce((acc, usuarios) => acc + usuarios.edad, 0)
+console.log(sumaEdades);
+
+//Parte 5 
+
+//Ejercicio 14
+const producto = {
+
+nombre:"Notebook",
+
+precio:1000
+
+}
+
+const { nombre, precio } = producto;
+
+console.log(nombre); 
+console.log(precio); 
+
+//Ejercicio 15
+
+const productoConStock = { ...producto, stock: 10};
+console.log(productoConStock);
+
+//Parte 6
+
+//Ejercicio 16
+const buscarProductos = (productos, nombre) => productos.find(producto => producto.nombre === nombre);
+console.log(buscarProductos(productos, "Monitor"));
+
+//Ejercicio 17
+
+const productosCaros = (productos) => productos.filter(e => e.precio > 50);
+console.log(productosCaros(productos));
+
+//Ejercicio 18
+
+const promedio = (numeros) => {
+    let promedio = 0;
+    numeros.forEach(e => 
+    {
+        promedio += e;
+    })
+    return promedio/numeros.length;
+}
+const numerosPromedio = [2, 4, 6, 8]
+console.log(promedio(numerosPromedio))
+
+
+
+
+//EJERCICIO FINAL
+
+const usuarios1 = [
+
+{id:1, nombre:"Ana", edad:20},
+
+{id:2, nombre:"Juan", edad:15},
+
+{id:3, nombre:"Pedro", edad:30}
+
+]
+
+//1.
+const obtenerUsuarios = () => {
+  return usuarios1;
+}
+console.log(obtenerUsuarios());
+
+
+//2.
+
+const obtenerUsuarioPorId = (id) => usuarios1.find(e => e.id === id)
+console.log(obtenerUsuarioPorId(2).nombre);
+
+
+//3.
+
+const obtenerMayores = (usuarios1) => usuarios1.filter(e => e.edad >= 18)
+console.log(obtenerMayores (usuarios1));
+
+//4.
+
+const crearUsuario = (nombre, edad) => new usuarios1 ["Manu", 16];
